@@ -1,0 +1,169 @@
+.nav {
+    border-radius: 0px;
+    margin-left: 6px;
+    margin-top: 20px;
+}
+
+button {
+    border-radius: 4px;
+    box-shadow: none;  
+    color:#015738;
+    position: relative;
+    margin-top: -20px;
+    padding: 9px 10px;
+}
+
+button:hover {
+    background-color: #015738;
+    color: #fff;
+}
+
+.weather-box {
+    background-image: url("nightsky.jpg");
+    background-size: 1000px;
+    border: 1px solid #005792;
+    border-radius: 13px;
+    box-shadow: 4px 2px #f1ecec;
+    display: block;
+    height: 500px;
+    margin-top: 50px;
+    width: 700px;
+}
+
+
+.date {
+    color: #f1ecec;
+    font-size: 15px;
+    margin-left: 15px;
+    margin-top: 40px;
+}
+
+h1 {
+    color: #f1ecec;
+    font-size: 28px;
+    font-weight: lighter;
+    margin-left: 52px;
+    margin-top: 5px;
+}
+
+h2{
+    color: rgb(245, 246, 241);
+    margin-left: 70px;
+    margin-top: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 48px; 
+}
+
+.value{
+    font-size: 15px;
+    position: relative;
+    bottom: 20px;
+ 
+}
+
+a {
+    text-decoration: none;
+    color: rgb(245, 246, 241);
+}
+
+.celcius {
+    font-size: 21px;
+}
+
+.celcius:hover {
+    color: rgb(3, 90, 61);
+}
+
+.farhenheit {
+    font-size: 16px;
+    position: relative;
+    top: 7px;
+}
+
+.farhenheit:hover {
+    color: rgb(3, 90, 61);
+}
+
+.degree-selected{
+    font-size: 20px;
+    position: relative;
+    top: -15px;
+}
+
+.degree-not-selected{
+    position: relative;
+    top: -10px;
+    font-size: 16px;
+}
+
+
+.extra {
+    color: #f1ecec;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    margin-top: 40px;
+    margin-right: 20px;
+    text-align: right;
+}
+
+ul{
+    margin-top: 10px;
+}
+
+li {
+    list-style: none;
+}
+    
+.box{
+    border-radius: 1%;
+    opacity: 0.6;
+    margin: 0 8.4px;
+}
+
+.alert-heading {
+    text-align: center;
+    font-size: 17px;
+    color: #30031f;
+}
+
+.detail {
+    font-size: 12px;
+    font-weight: 400px;
+}
+
+.day {
+    color: rgb(191, 7, 148);
+    font-size: 14px;
+    font-weight: 400px;
+    opacity: 10px;
+    position: relative;
+    left: 20px;
+}
+
+.icon {
+    color: #015738;
+    font-size: 25px;
+    position: relative;
+    left: 22px;
+}
+
+.temp {
+    color: rgb(191, 7, 148);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.low-temp {
+    font-size: 10px;
+    opacity: 0.5;
+    position: relative;
+    top: 7px;
+}
+
+.footer {
+    color: #30031f;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 0%;
+}
