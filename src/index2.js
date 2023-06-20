@@ -32,7 +32,6 @@ currentDate = dateOrdinalNumber();
 let currentDateTime = document.querySelector(".date");
 currentDateTime.innerHTML = `${day} ${currentDate} ${month} | ${currentTime}`;
 
-// next tasks
 
 function showCityTemp(response) {
  
@@ -51,21 +50,13 @@ function displayCity(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName.value}&appid=${apiKey}&units=${unit}`;
 
 
-axios.get(apiUrl).then(showCityTemp);
+  axios.get(apiUrl).then(showCityTemp);
   
 }
-// create a submit event, which will go to function- displayCity above
 
 let cityFormSubmit = document.querySelector("#city-form");
 cityFormSubmit.addEventListener("submit", displayCity);
 
-/*
-
-🙀 Bonus point:
-Add a Current Location button. When clicking on it, 
-it uses the Geolocation API to get your GPS coordinates
- and display and the city and current temperature using the OpenWeather API.
-*/
 
 function showCurrentCityTemp(response) {
   document.querySelector(".current-temp").innerHTML = Math.round(response.data.main.temp);
@@ -90,36 +81,4 @@ function showCurrentLocation(event) {
 
 let currentLocation = document.querySelector("#gpsLocation");
 currentLocation.addEventListener("click", showCurrentLocation);
-
-
-
-
-
-
-
-
-
-
-/* function showTempC(event) {
-  event.preventDefault();
-  let displayTemp = document.querySelector(".current-temp");
-  displayTemp.innerHTML = 36;
-}
-
-let tempCelcius = document.querySelector(".celcius");
-tempCelcius.addEventListener("click", showTempC);
-
-
-function showTempF(event) {
-  event.preventDefault();
-  let displayTemp = document.querySelector(".current-temp");
-  displayTemp.innerHTML = 89;
-}
-
-let tempFarhenheit = document.querySelector(".farhenheit");
-tempFarhenheit.addEventListener("click", showTempF); */
-
-
-
-
 
