@@ -167,3 +167,16 @@ li {
     text-align: center;
     padding-bottom: 0%;
 }
+
+a {
+    color: rgb(246, 250, 249);
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.GitHub {
+
+    color: rgb(2, 196, 196);
+    text-decoration: dotted;
+}
