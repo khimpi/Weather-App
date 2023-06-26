@@ -33,34 +33,19 @@ let currentDateTime = document.querySelector(".date");
 currentDateTime.innerHTML = `${day} ${currentDate} ${month} | ${currentTime}`;
 
 
-function showCityTemp(response) {
+// function showCityTemp(response) {
  
-  document.querySelector(".current-temp").innerHTML = Math.round(response.data.main.temp);
+//   document.querySelector(".current-temp").innerHTML = Math.round(response.data.main.temp);
 
-}
-
-function displayCity(event) {
-  event.preventDefault();
-  let cityName = document.querySelector(".form-control");
-  
-  document.querySelector("h1").innerHTML = cityName.value;
-
-  let unit = "metric";
-  let apiKey = `b400ae3b711a616262d18b0ca2cbe78f`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName.value}&appid=${apiKey}&units=${unit}`;
+// }
 
 
-  axios.get(apiUrl).then(showCityTemp);
-  
-}
-
-let cityFormSubmit = document.querySelector("#city-form");
-cityFormSubmit.addEventListener("submit", displayCity);
 
 
 function showCurrentCityTemp(response) {
   document.querySelector(".current-temp").innerHTML = Math.round(response.data.main.temp);
-  document.querySelector(".city").innerHTML = response.data.name;
+  document.querySelector(".city").innerHTML = `${response.data.name}, `;
+   document.querySelector(".country").innerHTML = response.data.sys.country;
   
 }
 
@@ -82,3 +67,20 @@ function showCurrentLocation(event) {
 let currentLocation = document.querySelector("#gpsLocation");
 currentLocation.addEventListener("click", showCurrentLocation);
 
+function displayCity(event) {
+  event.preventDefault();
+  let cityName = document.querySelector(".form-control");
+  document.querySelector(".city").innerHTML = cityName.value;
+  
+
+  let unit = "metric";
+  let apiKey = `b400ae3b711a616262d18b0ca2cbe78f`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName.value}&appid=${apiKey}&units=${unit}`;
+
+
+  axios.get(apiUrl).then(showCurrentCityTemp);
+  
+}
+
+let cityFormSubmit = document.querySelector("#city-form");
+cityFormSubmit.addEventListener("submit", displayCity);
