@@ -33,26 +33,28 @@ button:hover {
 
 .date {
     color: #f1ecec;
-    font-size: 15px;
+    font-size: 17px;
     margin-left: 15px;
     margin-top: 40px;
 }
 
 h1 {
     color: #f1ecec;
-    font-size: 28px;
+    font-size: 22px;
     font-weight: lighter;
     margin-left: 52px;
     margin-top: 5px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 h2{
     color: rgb(245, 246, 241);
-    margin-left: 70px;
+    margin-left: 68px;
     margin-top: 5px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 48px; 
 }
+
 
 .value{
     font-size: 15px;
@@ -66,36 +68,28 @@ a {
     color: rgb(245, 246, 241);
 }
 
-.celcius {
-    font-size: 21px;
+.celcius-link {
+    font-size: 25px;
 }
 
-.celcius:hover {
+.celcius-link:hover {
     color: rgb(3, 90, 61);
 }
 
-.farhenheit {
+.fahrenheit-link {
     font-size: 16px;
     position: relative;
     top: 7px;
 }
 
-.farhenheit:hover {
+.fahrenheit-link:hover {
     color: rgb(3, 90, 61);
 }
 
-.degree-selected{
-    font-size: 20px;
-    position: relative;
-    top: -15px;
+.degree-selected {
+    text-decoration: none;
+    color: rgb(245, 246, 241);
 }
-
-.degree-not-selected{
-    position: relative;
-    top: -10px;
-    font-size: 16px;
-}
-
 
 .extra {
     color: #f1ecec;
@@ -116,7 +110,6 @@ li {
     
 .box{
     border-radius: 1%;
-    opacity: 0.6;
     margin: 0 8.4px;
 }
 
@@ -178,5 +171,4 @@ a {
 .GitHub {
 
     color: rgb(2, 196, 196);
-    text-decoration: dotted;
 }

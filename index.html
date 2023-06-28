@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://kit.fontawesome.com/8e35b87b27.js" crossorigin="anonymous"></script>
-  <title>Document</title>
+  <title>Vanilla weather app</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
@@ -41,14 +41,13 @@
         </h1>
 
         <h2 id="temperature">
-          <span class="current-temp" id="currentTemp">36</span> <span class="value"> <a href="#" class="celcius"> °C |</a> <a href="#" class="farhenheit"> °F </a> </span>
+          <span class="current-temp" id="currentTemp">36</span><span class="value"><a href="#" class="celcius-link">°C |</a><a href="#" class="fahrenheit-link"> °F </a> </span>
         </h2>
       </div>
 
       <div class="col extra">
          <button class="current-location" id="gpsLocation"> Current Location </button>
 
-        <p>
         <div class="row">
 
           <div class="col-8 additional-info">
@@ -71,16 +70,16 @@
 
           <div class="col additional-info">
             <ul>
-              <li>
+              <li class="humidity">
                 77%
               </li>
-              <li>
+              <li class="wind">
                 3km/h
               </li>
-              <li>
+              <li class="max">
                 39°C
               </li>
-              <li>
+              <li class="min">
                 30°C
               </li>
             </ul>
@@ -143,7 +142,7 @@
   <hr>
   <p class="mb-0 footer">
     <em>
-      Last updated at 19:35
+      Last updated: <span class="update">19:35 </span>
     </em>
   </p>
 </div>
