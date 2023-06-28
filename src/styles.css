@@ -1,21 +1,60 @@
-.nav {
-    border-radius: 0px;
-    margin-left: 6px;
-    margin-top: 20px;
+
+body {
+    background-image: url("");
 }
 
 button {
     border-radius: 4px;
-    box-shadow: none;  
-    color:#015738;
-    position: relative;
-    margin-top: -20px;
+    box-shadow: none;
+    color: #015738;
+    margin-top: -26px;
+    margin-right: -12px;
     padding: 9px 10px;
+    position: relative;
 }
 
 button:hover {
     background-color: #015738;
     color: #fff;
+}
+
+h1 {
+    color: #f1ecec;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 24px;
+    font-weight: lighter;
+    margin-left: 52px;
+    margin-top: 5px;
+    }
+
+h2 {
+    color: rgb(245, 246, 241);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 48px;
+    margin-left: 68px;
+    margin-top: 5px;
+}
+
+a {
+    color: rgb(245, 246, 241);
+    text-decoration: none;
+}
+
+ul {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+li {
+    list-style: none;
+}
+
+
+.nav {
+    border-radius: 0px;
+    margin-bottom: -5px;
+    margin-left: 6px;
+    margin-top: 20px;   
 }
 
 .weather-box {
@@ -30,42 +69,17 @@ button:hover {
     width: 700px;
 }
 
-
 .date {
     color: #f1ecec;
     font-size: 17px;
     margin-left: 15px;
-    margin-top: 40px;
+    margin-top: 30px;
 }
-
-h1 {
-    color: #f1ecec;
-    font-size: 22px;
-    font-weight: lighter;
-    margin-left: 52px;
-    margin-top: 5px;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-h2{
-    color: rgb(245, 246, 241);
-    margin-left: 68px;
-    margin-top: 5px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 48px; 
-}
-
 
 .value{
+    bottom: 20px;
     font-size: 15px;
     position: relative;
-    bottom: 20px;
- 
-}
-
-a {
-    text-decoration: none;
-    color: rgb(245, 246, 241);
 }
 
 .celcius-link {
@@ -86,11 +100,6 @@ a {
     color: rgb(3, 90, 61);
 }
 
-.degree-selected {
-    text-decoration: none;
-    color: rgb(245, 246, 241);
-}
-
 .extra {
     color: #f1ecec;
     font-family: Arial, Helvetica, sans-serif;
@@ -99,24 +108,16 @@ a {
     margin-right: 20px;
     text-align: right;
 }
-
-ul{
-    margin-top: 10px;
-}
-
-li {
-    list-style: none;
-}
-    
+   
 .box{
     border-radius: 1%;
     margin: 0 8.4px;
 }
 
 .alert-heading {
-    text-align: center;
-    font-size: 17px;
     color: #30031f;
+    font-size: 17px;
+    text-align: center;
 }
 
 .detail {
@@ -161,14 +162,13 @@ li {
     padding-bottom: 0%;
 }
 
-a {
+.source {
     color: rgb(246, 250, 249);
     text-align: center;
     font-size: 12px;
-    margin-bottom: 5px;
+    padding-top: 10px;
 }
 
 .GitHub {
-
     color: rgb(2, 196, 196);
 }

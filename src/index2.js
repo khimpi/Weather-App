@@ -43,7 +43,7 @@ function showCurrentCityTemp(response) {
   document.querySelector(".city").innerHTML = `${response.data.name}, `;
   document.querySelector(".country").innerHTML = response.data.sys.country;
   document.querySelector(".humidity").innerHTML = `${response.data.main.humidity}%`;
-  document.querySelector(".wind").innerHTML = `${response.data.wind.speed}km/h`;
+  document.querySelector(".wind").innerHTML = `${Math.round(response.data.wind.speed)}km/h`;
   document.querySelector(".max").innerHTML = `${Math.round(response.data.main.temp_max)}°C`;
   document.querySelector(".min").innerHTML = `${Math.round(response.data.main.temp_min)}°C`;
   formatDateTime(response.data.dt * 1000);
