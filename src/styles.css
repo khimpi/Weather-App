@@ -28,7 +28,7 @@ h1 {
     }
 
 h2 {
-    color: rgb(245, 246, 241);
+    color: #f1ecec;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 48px;
     margin-left: 68px;
@@ -36,7 +36,7 @@ h2 {
 }
 
 a {
-    color: rgb(245, 246, 241);
+    color:#f1ecec;
     text-decoration: none;
 }
 
@@ -83,21 +83,18 @@ li {
 }
 
 .celcius-link {
-    font-size: 25px;
-}
-
-.celcius-link:hover {
+    font-size: 26px;
     color: rgb(3, 90, 61);
 }
+
 
 .fahrenheit-link {
-    font-size: 16px;
-    position: relative;
-    top: 7px;
+    font-size: 25px;
+    color: rgb(3, 90, 61);
 }
 
-.fahrenheit-link:hover {
-    color: rgb(3, 90, 61);
+.degreeSelected {
+    color: #f1ecec;
 }
 
 .extra {
@@ -110,6 +107,7 @@ li {
 }
    
 .box{
+    background-color: #f1ecec;
     border-radius: 1%;
     margin: 0 8.4px;
 }
@@ -163,12 +161,14 @@ li {
 }
 
 .source {
-    color: rgb(246, 250, 249);
+    color: #f1ecec;
     text-align: center;
     font-size: 12px;
     padding-top: 10px;
 }
 
 .GitHub {
-    color: rgb(2, 196, 196);
+    color: rgb(120, 222, 190);
+    font-weight: bold;
 }
+

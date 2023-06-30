@@ -85,6 +85,8 @@ let cTemp = 36;
 
 function showTempC(event) {
   event.preventDefault();
+  degreeC.classList.add("degreeSelected");
+  degreeF.classList.remove("degreeSelected");
   document.querySelector(".current-temp").innerHTML = cTemp;
   
 }
@@ -94,9 +96,12 @@ degreeC.addEventListener("click", showTempC);
 
 function showTempF(event) {
   event.preventDefault();
+  degreeC.classList.remove("degreeSelected");
+  degreeF.classList.add("degreeSelected");
   document.querySelector(".current-temp").innerHTML = Math.round(cTemp * 9/7 + 32);
 }
 
 let degreeF = document.querySelector(".fahrenheit-link");
 degreeF.addEventListener("click", showTempF);
 
+//color: #015738
