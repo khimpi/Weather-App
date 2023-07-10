@@ -37,6 +37,9 @@ function formatDateTime() {
 }
 
 function showCurrentCityTemp(response) {
+ 
+  let icon = document.querySelector("#icon");
+  icon.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   cTemp = Math.round(response.data.main.temp);
   document.querySelector(".current-temp").innerHTML = Math.round(response.data.main.temp);
   
