@@ -20,15 +20,25 @@
 
 <body>
   <div class="container weather-box">
+  <div class="row">
+    <div class="col-9">
 
-    <form class="container-fluid nav city-form" id="city-form">
+  <form class="container-fluid nav city-form" id="city-form">
       <div class="input-group" style="width: 500px">
         <input type="search" class="form-control" placeholder="Search City" aria-label="Search" 
           aria-describedby="basic-addon1">
       </div>
-    <button class="current-location" id="gpsLocation"> Current Location </button>
+
     </form>
 
+    </div>
+
+    <div class="col 10-12">
+    <button class="current-location" id="gpsLocation" style="height: 1cm"> Current Location </button>
+    </div>
+
+
+  </div>
 
 
     <div class="row">
@@ -43,6 +53,8 @@
         </h1>
 
         <h2 id="temperature">
+          <span id="icon">🌤️
+          </span>
           <span class="current-temp" id="currentTemp">36</span><span class="value"><a href="#" class="celcius-link degreeSelected">°C </a><a href="#" class="fahrenheit-link">|°F </a> </span>
         </h2>
       </div>
