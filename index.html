@@ -22,11 +22,13 @@
   <div class="container weather-box">
 
     <form class="container-fluid nav city-form" id="city-form">
-      <div class="input-group">
+      <div class="input-group" style="width: 500px">
         <input type="search" class="form-control" placeholder="Search City" aria-label="Search" 
           aria-describedby="basic-addon1">
       </div>
+    <button class="current-location" id="gpsLocation"> Current Location </button>
     </form>
+
 
 
     <div class="row">
@@ -41,13 +43,11 @@
         </h1>
 
         <h2 id="temperature">
-          <span class="current-temp" id="currentTemp">36</span><span class="value"><a href="#" class="celcius-link">°C </a><a href="#" class="fahrenheit-link">|°F </a> </span>
+          <span class="current-temp" id="currentTemp">36</span><span class="value"><a href="#" class="celcius-link degreeSelected">°C </a><a href="#" class="fahrenheit-link">|°F </a> </span>
         </h2>
       </div>
 
       <div class="col extra">
-         <button class="current-location" id="gpsLocation"> Current Location </button>
-
         <div class="row">
 
           <div class="col-8 additional-info">

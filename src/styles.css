@@ -4,13 +4,14 @@ body {
 }
 
 button {
-    border-radius: 4px;
+    border-radius: 8.8px;
     box-shadow: none;
     color: #015738;
-    margin-top: -26px;
-    margin-right: -12px;
-    padding: 9px 10px;
-    position: relative;
+    display: block;
+    text-align: right;
+    margin-right: 6px;
+    margin-left: 18px;
+    padding: 2px 5px;
 }
 
 button:hover {
@@ -54,7 +55,7 @@ li {
     border-radius: 0px;
     margin-bottom: -5px;
     margin-left: 6px;
-    margin-top: 20px;   
+    margin-top: 20px;
 }
 
 .weather-box {
@@ -107,7 +108,7 @@ li {
 }
    
 .box{
-    background-color: #f1ecec;
+    background-color: #a7e3ee;
     border-radius: 1%;
     margin: 0 8.4px;
 }
