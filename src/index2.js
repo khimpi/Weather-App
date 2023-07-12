@@ -68,16 +68,20 @@ function showCurrentLocation(event) {
 let currentLocation = document.querySelector("#gpsLocation");
 currentLocation.addEventListener("click", showCurrentLocation);
 
+function search(city) {
+  let unit = "metric";
+  let apiKey = `b400ae3b711a616262d18b0ca2cbe78f`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
+
+  axios.get(apiUrl).then(showCurrentCityTemp);
+}
+
 function displayCity(event) {
   event.preventDefault();
   let cityName = document.querySelector(".form-control");
   document.querySelector(".city").innerHTML = cityName.value;
 
-  let unit = "metric";
-  let apiKey = `b400ae3b711a616262d18b0ca2cbe78f`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName.value}&appid=${apiKey}&units=${unit}`;
-
-  axios.get(apiUrl).then(showCurrentCityTemp);
+  search(cityName.value);
 }
 
 let cityFormSubmit = document.querySelector("#city-form");
@@ -106,4 +110,6 @@ function showTempF(event) {
 let degreeF = document.querySelector(".fahrenheit-link");
 degreeF.addEventListener("click", showTempF);
 
+
+search("Assam");
 //color: #015738
