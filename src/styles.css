@@ -23,7 +23,7 @@ button:hover {
 h1 {
     color: #0a0909;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: lighter;
     margin-left: 52px;
     margin-top: 5px;
@@ -32,7 +32,7 @@ h1 {
 h2 {
     color: #0a0909;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 48px;
+    font-size: 42px;
     margin-left: 11px;
     margin-top: 5px;
 }
@@ -68,9 +68,8 @@ li {
 }
 
 .weather-box {
-    /* background-image: url("nightsky.jpg"); */
     background-size: 1000px;
-    background-color: lightpink;
+    background-color: rgb(255, 255, 255);
     border: 1px solid #005792;
     border-radius: 13px;
     box-shadow: 4px 2px #0a0909;
@@ -132,22 +131,23 @@ li {
 .detail {
     font-size: 12px;
     font-weight: 400px;
+    text-align: center;
 }
 
 .day {
     color: rgb(191, 7, 148);
     font-size: 14px;
     font-weight: 400px;
-    opacity: 10px;
-    position: relative;
-    left: 20px;
+    opacity: 0.7;
+    /* position: relative;
+    left: 20px; */
 }
 
 .icon {
     color: #015738;
-    font-size: 25px;
-    position: relative;
-    left: 22px;
+    font-size: 18px;
+    /* position: relative;
+    left: 22px; */
 }
 
 .temp {
