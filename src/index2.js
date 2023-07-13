@@ -110,6 +110,7 @@ function showTempF(event) {
 let degreeF = document.querySelector(".fahrenheit-link");
 degreeF.addEventListener("click", showTempF);
 
+
 function displayForecast() {
   let forecastElement = document.querySelector(".forecast");
 
@@ -118,21 +119,42 @@ function displayForecast() {
   let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
   for (i = 0; i < 7; i++) {
-     forecastHTML = forecastHTML + `<div class="col outline forecast">
+    forecastHTML = forecastHTML + `<div class="col outline forecast">
          <div class="day">${days[i]} </div>
              <span class="icon"><i class="fa-solid fa-sun"></i></span>
-              <div class="temp">37°C | <span class="low-temp">30°C</span>
+            <div class="temp">37°C | <span class="low-temp">30°C</span>
               </div> 
        </div> `;
   }
- 
- 
-  forecastHTML = forecastHTML + `</div>`;
 
+  forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
+
+
+// function displayForecast() {
+//   let forecastElement = document.querySelector(".forecast");
+
+//   let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+//   let forecastHTML = `<div class="row">`;
+
+//   days.forEach(function (day) {
+//     forecastHTML = forecastHTML + `<div class="col outline forecast detail">
+//          <div class="day">${day} </div>
+//               <span class="icon"><i class="fa-solid fa-sun"></i></span>
+//                <div class="temp">37°C | <span class="low-temp">30°C</span>
+//                </div> 
+//       </div>`;
+//   })
+  
+//   forecastHTML = forecastHTML + `</div>`;
+//   forecastElement.innerHTML = forecastHTML;
+// }
 
 displayForecast();
 
 search("Assam");
-//color: #015738
+
+
+
+  // let forecastHTML = 
