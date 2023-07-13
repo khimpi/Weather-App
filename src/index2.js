@@ -110,6 +110,29 @@ function showTempF(event) {
 let degreeF = document.querySelector(".fahrenheit-link");
 degreeF.addEventListener("click", showTempF);
 
+function displayForecast() {
+  let forecastElement = document.querySelector(".forecast");
+
+  let forecastHTML = `<div class="row detail">`;
+
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+  for (i = 0; i < 7; i++) {
+     forecastHTML = forecastHTML + `<div class="col outline forecast">
+         <div class="day">${days[i]} </div>
+             <span class="icon"><i class="fa-solid fa-sun"></i></span>
+              <div class="temp">37°C | <span class="low-temp">30°C</span>
+              </div> 
+       </div> `;
+  }
+ 
+ 
+  forecastHTML = forecastHTML + `</div>`;
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
+displayForecast();
 
 search("Assam");
 //color: #015738
