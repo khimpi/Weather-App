@@ -44,6 +44,7 @@ function getForecast(coordinates) {
   let apiKey = `b400ae3b711a616262d18b0ca2cbe78f`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
   console.log(apiUrl);
+ 
   axios.get(apiUrl).then(displayForecast);
 
 }
@@ -53,17 +54,16 @@ function showCurrentCityTemp(response) {
   let icon = document.querySelector("#icon");
   icon.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   cTemp = Math.round(response.data.main.temp);
-  document.querySelector(".current-temp").innerHTML = Math.round(response.data.main.temp);
   
+  document.querySelector(".current-temp").innerHTML = Math.round(response.data.main.temp);
   document.querySelector(".city").innerHTML = `${response.data.name}, `;
   document.querySelector(".country").innerHTML = response.data.sys.country;
   document.querySelector(".humidity").innerHTML = `${response.data.main.humidity}%`;
   document.querySelector(".wind").innerHTML = `${Math.round(response.data.wind.speed)}km/h`;
   document.querySelector(".max").innerHTML = `${Math.round(response.data.main.temp_max)}°C`;
   document.querySelector(".min").innerHTML = `${Math.round(response.data.main.temp_min)}°C`;
+  
   formatDateTime(response.data.dt * 1000);
-
-
   getForecast(response.data.coord);
 }
 
@@ -72,6 +72,7 @@ function showPosition(position) {
   let longitude = position.coords.longitude;
   apiKey = `b400ae3b711a616262d18b0ca2cbe78f`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
+  
   axios.get(apiUrl).then(showCurrentCityTemp);
 }
 
@@ -79,9 +80,6 @@ function showCurrentLocation(event) {
     event.preventDefault();
   navigator.geolocation.getCurrentPosition(showPosition);
 }
-
-let currentLocation = document.querySelector("#gpsLocation");
-currentLocation.addEventListener("click", showCurrentLocation);
 
 function search(city) {
   let unit = "metric";
@@ -99,21 +97,12 @@ function displayCity(event) {
   search(cityName.value);
 }
 
-let cityFormSubmit = document.querySelector("#city-form");
-cityFormSubmit.addEventListener("submit", displayCity);
-
-let cTemp = 36;
-
 function showTempC(event) {
   event.preventDefault();
   degreeC.classList.add("degreeSelected");
   degreeF.classList.remove("degreeSelected");
   document.querySelector(".current-temp").innerHTML = cTemp;
-  
 }
-
-let degreeC = document.querySelector(".celcius-link");
-degreeC.addEventListener("click", showTempC);
 
 function showTempF(event) {
   event.preventDefault();
@@ -122,9 +111,6 @@ function showTempF(event) {
   document.querySelector(".current-temp").innerHTML = Math.round(cTemp * 9/7 + 32);
 }
 
-let degreeF = document.querySelector(".fahrenheit-link");
-degreeF.addEventListener("click", showTempF);
-
 function formatDay(timestamp) {
 
   let date = new Date(timestamp * 1000);
@@ -132,9 +118,7 @@ function formatDay(timestamp) {
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   return days[day];
-  
 }
-
 
 function displayForecast(response) {
   forecast = response.data.daily;
@@ -151,32 +135,23 @@ function displayForecast(response) {
                </div> 
       </div>`;}
   })
-
-  
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
 
+let currentLocation = document.querySelector("#gpsLocation");
+currentLocation.addEventListener("click", showCurrentLocation);
 
-// function displayForecast() {
-//   let forecastElement = document.querySelector(".forecast");
+let degreeF = document.querySelector(".fahrenheit-link");
+degreeF.addEventListener("click", showTempF);
 
-//   let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-//   let forecastHTML = `<div class="row">`;
+let degreeC = document.querySelector(".celcius-link");
+degreeC.addEventListener("click", showTempC);
 
-//  for (i = 0; i < 7; i++) { 
-// //     forecastHTML = forecastHTML + `<div class="col outline forecast">
-// //          <div class="day">${formatDay(response.data.dt)} </div>
-// //              <span class="icon"><img ="fa-solid fa-sun"></img></span>
-// //             <div class="temp">37°C | <span class="low-temp">30°C</span>
-// //               </div> 
-// //        </div> `;
-// //   }
 
-  
-//   forecastHTML = forecastHTML + `</div>`;
-//   forecastElement.innerHTML = forecastHTML;
-// }
+let cityFormSubmit = document.querySelector("#city-form");
+cityFormSubmit.addEventListener("submit", displayCity);
 
+let cTemp = 36;
 
 search("Assam");
