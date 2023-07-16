@@ -36,6 +36,18 @@ function formatDateTime() {
 
 }
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let latitude = coordinates.lat;
+  let longitude = coordinates.lon;
+   
+  let apiKey = `b400ae3b711a616262d18b0ca2cbe78f`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+
+}
+
 function showCurrentCityTemp(response) {
  
   let icon = document.querySelector("#icon");
@@ -50,6 +62,9 @@ function showCurrentCityTemp(response) {
   document.querySelector(".max").innerHTML = `${Math.round(response.data.main.temp_max)}°C`;
   document.querySelector(".min").innerHTML = `${Math.round(response.data.main.temp_min)}°C`;
   formatDateTime(response.data.dt * 1000);
+
+
+  getForecast(response.data.coord);
 }
 
 function showPosition(position) {
@@ -110,23 +125,34 @@ function showTempF(event) {
 let degreeF = document.querySelector(".fahrenheit-link");
 degreeF.addEventListener("click", showTempF);
 
+function formatDay(timestamp) {
 
-function displayForecast() {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+  
+}
+
+
+function displayForecast(response) {
+  forecast = response.data.daily;
   let forecastElement = document.querySelector(".forecast");
 
   let forecastHTML = `<div class="row detail">`;
 
-  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+    forecastHTML = forecastHTML + `<div class="col outline forecast detail">
+         <div class="day">${formatDay(forecastDay.dt)} </div>
+              <span class="icon"><img src="https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" width="40px"></img></span>
+               <div class="temp">${Math.round(forecastDay.temp.max)}°C | <span class="low-temp">${Math.round(forecastDay.temp.min)}°C</span>
+               </div> 
+      </div>`;}
+  })
 
-  for (i = 0; i < 7; i++) {
-    forecastHTML = forecastHTML + `<div class="col outline forecast">
-         <div class="day">${days[i]} </div>
-             <span class="icon"><i class="fa-solid fa-sun"></i></span>
-            <div class="temp">37°C | <span class="low-temp">30°C</span>
-              </div> 
-       </div> `;
-  }
-
+  
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
@@ -138,23 +164,19 @@ function displayForecast() {
 //   let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 //   let forecastHTML = `<div class="row">`;
 
-//   days.forEach(function (day) {
-//     forecastHTML = forecastHTML + `<div class="col outline forecast detail">
-//          <div class="day">${day} </div>
-//               <span class="icon"><i class="fa-solid fa-sun"></i></span>
-//                <div class="temp">37°C | <span class="low-temp">30°C</span>
-//                </div> 
-//       </div>`;
-//   })
+//  for (i = 0; i < 7; i++) { 
+// //     forecastHTML = forecastHTML + `<div class="col outline forecast">
+// //          <div class="day">${formatDay(response.data.dt)} </div>
+// //              <span class="icon"><img ="fa-solid fa-sun"></img></span>
+// //             <div class="temp">37°C | <span class="low-temp">30°C</span>
+// //               </div> 
+// //        </div> `;
+// //   }
+
   
 //   forecastHTML = forecastHTML + `</div>`;
 //   forecastElement.innerHTML = forecastHTML;
 // }
 
-displayForecast();
 
 search("Assam");
-
-
-
-  // let forecastHTML = 
