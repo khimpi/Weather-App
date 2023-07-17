@@ -51,15 +51,15 @@ function getForecast(coordinates) {
 
 function showCurrentCityTemp(response) {
  
-  let icon = document.querySelector("#icon");
-  icon.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  // let icon = document.querySelector("#icon");
+  // icon.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   cTemp = Math.round(response.data.main.temp);
   
   document.querySelector(".current-temp").innerHTML = Math.round(response.data.main.temp);
   document.querySelector(".city").innerHTML = `${response.data.name}, `;
   document.querySelector(".country").innerHTML = response.data.sys.country;
   document.querySelector(".humidity").innerHTML = `${response.data.main.humidity}%`;
-  document.querySelector(".wind").innerHTML = `${Math.round(response.data.wind.speed)}km/h`;
+  document.querySelector(".wind").innerHTML = `${Math.round(response.data.wind.speed)}m/s`;
   document.querySelector(".max").innerHTML = `${Math.round(response.data.main.temp_max)}°C`;
   document.querySelector(".min").innerHTML = `${Math.round(response.data.main.temp_min)}°C`;
   
@@ -155,3 +155,4 @@ cityFormSubmit.addEventListener("submit", displayCity);
 let cTemp = 36;
 
 search("Assam");
+
